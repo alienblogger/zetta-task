@@ -24321,10 +24321,6 @@ var PhotoView = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (PhotoView.__proto__ || Object.getPrototypeOf(PhotoView)).call(this, props));
 
-    _this.setAlbum = function (id) {
-      _this.props.setter("userid", id);
-    };
-
     _this.setView = function (view) {
       _this.props.setter("view", view);
     };
@@ -24340,7 +24336,7 @@ var PhotoView = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      this.props.getData("photos?albumid=" + this.props.albumid, function (data) {
+      this.props.getData("photos?albumId=" + this.props.albumid, function (data) {
         var phlist = data.slice(0, 5).map(function (item) {
           return _react2.default.createElement(_imagecard2.default, { key: item.id, url: item.url });
         });
